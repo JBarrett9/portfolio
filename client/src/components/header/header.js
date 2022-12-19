@@ -10,7 +10,7 @@ const Header = () => {
       <Link to="/">
         <img
           className="logo"
-          src="https://storage.cloud.google.com/portfolio-web-static-files-9867/logo.JPG"
+          src="https://storage.googleapis.com/portfolio-web-static-files-9867/logo.JPG"
         />
       </Link>
       <Link className="nav-link">Contact Me</Link>
