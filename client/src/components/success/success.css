@@ -1,0 +1,10 @@
+.success-message {
+  position: absolute;
+  background-color: var(--c6);
+  color: white;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+  width: 40rem;
+  font-size: 1.9rem;
+}

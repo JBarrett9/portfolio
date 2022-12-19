@@ -152,12 +152,6 @@
 }
 
 @media (min-width: 600px) {
-  .about-me {
-    margin-top: 9rem;
-    width: 40%;
-    margin-left: calc(50% - 380px);
-  }
-
   .home {
     margin: auto;
   }
@@ -195,5 +189,13 @@
     height: 15rem;
     border-bottom: 0.2rem solid var(--c2);
     left: calc(50% - 150px);
+  }
+}
+
+@media (min-width: 961px) {
+  .about-me {
+    margin-top: 9rem;
+    width: 40%;
+    margin-left: calc(50% - 380px);
   }
 }
