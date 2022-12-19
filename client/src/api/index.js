@@ -1,6 +1,8 @@
+const BASE_URL = "https://jbarrett-portfolio.onrender.com/api";
+
 const fetchProjectById = async (projectId) => {
   try {
-    const response = await fetch(`/api/projects/project/${projectId}`, {
+    const response = await fetch(BASE_URL + `/projects/project/${projectId}`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -14,7 +16,7 @@ const fetchProjectById = async (projectId) => {
 
 const fetchProjects = async () => {
   try {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(BASE_URL + `/projects`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -28,11 +30,14 @@ const fetchProjects = async () => {
 
 const fetchProjectsByCategory = async (categoryId) => {
   try {
-    const response = await fetch(`/api/projects/category/${categoryId}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      BASE_URL + `/projects/category/${categoryId}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const projects = await response.json();
     return projects;
   } catch (error) {
@@ -42,7 +47,7 @@ const fetchProjectsByCategory = async (categoryId) => {
 
 const fetchTechnologies = async () => {
   try {
-    const response = await fetch(`/api/technologies`, {
+    const response = await fetch(BASE_URL + `/technologies`, {
       headers: {
         "Content-Type": "application/json",
       },

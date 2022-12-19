@@ -57,6 +57,20 @@ const Projects = () => {
     setStart(start + resultsPerPage);
   };
 
+  const includesSearch = (project) => {
+    return (
+      project.title.toLowerCase().includes(search) ||
+      project.description.toLowerCase().includes(search) ||
+      project.technologies
+        .map((technology) => technology.name)
+        .filter((technology) => technology.toLowerCase().includes(search))
+        .length ||
+      project.categories
+        .map((category) => category.name)
+        .filter((category) => category.toLowerCase().includes(search)).length
+    );
+  };
+
   return (
     <>
       <Header />
@@ -70,15 +84,24 @@ const Projects = () => {
       {projects.length > 0 ? (
         <div className="projects">
           {start >= resultsPerPage && (
-            <button className="page-btn" onClick={prev}>
+            <button
+              className="page-btn"
+              onClick={() => setStart(start - resultsPerPage)}
+            >
               <Icon path={mdiArrowLeftBoldOutline} size={3} color="#fff" />
             </button>
           )}
-          {projects.slice(start, start + resultsPerPage).map((project) => (
-            <ProjectCard project={project} />
-          ))}
+          {projects
+            .filter((project) => includesSearch(project))
+            .slice(start, start + resultsPerPage)
+            .map((project) => (
+              <ProjectCard project={project} />
+            ))}
           {start + resultsPerPage < projects.length && (
-            <button className="page-btn" onClick={next}>
+            <button
+              className="page-btn"
+              onClick={() => setStart(start + resultsPerPage)}
+            >
               <Icon path={mdiArrowRightBoldOutline} size={3} color="#fff" />
             </button>
           )}
@@ -90,15 +113,24 @@ const Projects = () => {
       {miniProjects.length > 0 ? (
         <div className="projects mini">
           {miniStart > resultsPerPage && (
-            <button className="page-btn" onClick={prev}>
+            <button
+              className="page-btn"
+              onClick={() => setMiniStart(miniStart - resultsPerPage)}
+            >
               <Icon path={mdiArrowLeftBoldOutline} size={3} color="#fff" />
             </button>
           )}
-          {miniProjects.map((project) => (
-            <ProjectCard project={project} />
-          ))}
+          {miniProjects
+            .filter((project) => includesSearch(project))
+            .slice(miniStart, miniStart + resultsPerPage)
+            .map((project) => (
+              <ProjectCard project={project} />
+            ))}
           {miniStart + resultsPerPage < miniProjects.length && (
-            <button className="page-btn" onClick={next}>
+            <button
+              className="page-btn"
+              onClick={() => setMiniStart(miniStart + resultsPerPage)}
+            >
               <Icon path={mdiArrowRightBoldOutline} size={3} color="#fff" />
             </button>
           )}
