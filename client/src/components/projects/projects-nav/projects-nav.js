@@ -15,6 +15,8 @@ const ProjectsNav = (props) => {
     getTechnologies();
   }, []);
 
+  console.log(technology);
+
   return (
     <nav className="projects-nav">
       <span>
@@ -27,7 +29,7 @@ const ProjectsNav = (props) => {
           value={technology}
           onChange={(e) => setTechnology(e.target.value)}
         >
-          <option value="">Any</option>
+          <option value="any">Any</option>
           {technologies.length > 0 &&
             technologies.map((technology) => (
               <option key={technology.id} value={technology.name}>

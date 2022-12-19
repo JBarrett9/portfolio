@@ -1,6 +1,6 @@
 footer {
   background-color: #202020;
-  height: 13rem;
+  height: 26rem;
   line-height: 5.2rem;
   width: 100%;
   position: static;
@@ -15,6 +15,8 @@ footer {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 .copyright {
@@ -27,13 +29,22 @@ footer {
   color: white;
 }
 
-@media (min-width: 600px) {
+.quote {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  width: 36rem;
+}
+
+@media (min-width: 1500px) {
   .copyright {
     margin-left: 1rem;
+    order: 1;
   }
 
   footer {
-    height: 7rem;
+    height: 8rem;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -42,5 +53,14 @@ footer {
     flex-basis: 10%;
     justify-content: space-around;
     align-items: flex-end;
+    order: 3;
+    margin-top: 1rem;
+  }
+
+  .quote {
+    order: 2;
+    width: auto;
+    flex-basis: 1;
+    font-size: 1.8rem;
   }
 }

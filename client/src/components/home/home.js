@@ -101,6 +101,7 @@ const Home = () => {
         current student at Arizona State University studying political science,
         political statistics and data science.
       </p>
+
       <div className="featured-projects">
         {projects.length > 0 ? (
           <>

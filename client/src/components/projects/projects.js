@@ -59,15 +59,21 @@ const Projects = () => {
 
   const includesSearch = (project) => {
     return (
-      project.title.toLowerCase().includes(search) ||
-      project.description.toLowerCase().includes(search) ||
+      (project.title.toLowerCase().includes(search.toLowerCase()) ||
+        project.description.toLowerCase().includes(search.toLowerCase()) ||
+        project.technologies
+          .map((technology) => technology.name)
+          .filter((technology) =>
+            technology.toLowerCase().includes(search.toLowerCase())
+          ).length ||
+        project.categories
+          .map((category) => category.name)
+          .filter((category) =>
+            category.toLowerCase().includes(search.toLowerCase())
+          ).length) &&
       project.technologies
         .map((technology) => technology.name)
-        .filter((technology) => technology.toLowerCase().includes(search))
-        .length ||
-      project.categories
-        .map((category) => category.name)
-        .filter((category) => category.toLowerCase().includes(search)).length
+        .filter((tech) => technology === "any" || tech === technology).length
     );
   };
 
@@ -82,59 +88,77 @@ const Projects = () => {
       />
       <h2 className="projects-heading ph1">Projects</h2>
       {projects.length > 0 ? (
-        <div className="projects">
-          {start >= resultsPerPage && (
-            <button
-              className="page-btn"
-              onClick={() => setStart(start - resultsPerPage)}
-            >
-              <Icon path={mdiArrowLeftBoldOutline} size={3} color="#fff" />
-            </button>
-          )}
-          {projects
-            .filter((project) => includesSearch(project))
-            .slice(start, start + resultsPerPage)
-            .map((project) => (
-              <ProjectCard project={project} />
-            ))}
-          {start + resultsPerPage < projects.length && (
-            <button
-              className="page-btn"
-              onClick={() => setStart(start + resultsPerPage)}
-            >
-              <Icon path={mdiArrowRightBoldOutline} size={3} color="#fff" />
-            </button>
-          )}
-        </div>
+        <>
+          <div className="projects">
+            {projects
+              .filter((project) => includesSearch(project))
+              .slice(start, start + resultsPerPage)
+              .map((project) => (
+                <ProjectCard project={project} />
+              ))}
+          </div>
+          <span className="nav-btns">
+            {start >= resultsPerPage && (
+              <button
+                className="page-btn prev"
+                onClick={() => setStart(start - resultsPerPage)}
+              >
+                <Icon
+                  className="arrow"
+                  path={mdiArrowLeftBoldOutline}
+                  size={3}
+                  color="#fff"
+                />
+              </button>
+            )}
+            {start + resultsPerPage < projects.length && (
+              <button
+                className="page-btn next"
+                onClick={() => setStart(start + resultsPerPage)}
+              >
+                <Icon path={mdiArrowRightBoldOutline} size={3} color="#fff" />
+              </button>
+            )}
+          </span>
+        </>
       ) : (
         <div className="spinner" />
       )}
       <h2 className="projects-heading ph2">Smaller Projects</h2>
       {miniProjects.length > 0 ? (
-        <div className="projects mini">
-          {miniStart > resultsPerPage && (
-            <button
-              className="page-btn"
-              onClick={() => setMiniStart(miniStart - resultsPerPage)}
-            >
-              <Icon path={mdiArrowLeftBoldOutline} size={3} color="#fff" />
-            </button>
-          )}
-          {miniProjects
-            .filter((project) => includesSearch(project))
-            .slice(miniStart, miniStart + resultsPerPage)
-            .map((project) => (
-              <ProjectCard project={project} />
-            ))}
-          {miniStart + resultsPerPage < miniProjects.length && (
-            <button
-              className="page-btn"
-              onClick={() => setMiniStart(miniStart + resultsPerPage)}
-            >
-              <Icon path={mdiArrowRightBoldOutline} size={3} color="#fff" />
-            </button>
-          )}
-        </div>
+        <>
+          <div className="projects mini">
+            {miniProjects
+              .filter((project) => includesSearch(project))
+              .slice(miniStart, miniStart + resultsPerPage)
+              .map((project) => (
+                <ProjectCard project={project} />
+              ))}
+          </div>
+          <span className="nav-btns">
+            {miniStart >= resultsPerPage && (
+              <button
+                className="page-btn prev"
+                onClick={() => setMiniStart(miniStart - resultsPerPage)}
+              >
+                <Icon
+                  className="arrow"
+                  path={mdiArrowLeftBoldOutline}
+                  size={3}
+                  color="#fff"
+                />
+              </button>
+            )}
+            {miniStart + resultsPerPage < miniProjects.length && (
+              <button
+                className="page-btn next"
+                onClick={() => setMiniStart(miniStart + resultsPerPage)}
+              >
+                <Icon path={mdiArrowRightBoldOutline} size={3} color="#fff" />
+              </button>
+            )}
+          </span>
+        </>
       ) : (
         <div className="spinner" />
       )}

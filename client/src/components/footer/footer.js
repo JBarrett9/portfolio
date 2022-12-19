@@ -5,9 +5,6 @@ import { mdiGithub } from "@mdi/js";
 const Footer = () => {
   return (
     <footer>
-      <small className="copyright">
-        &copy; Copyright 2022, James Barrett. All Rights Reserved
-      </small>
       <span className="footer-icons">
         <a href="mailto:info@jamesbarrett.dev">
           <i className="material-icons" id="mail-icon">
@@ -33,6 +30,17 @@ const Footer = () => {
           <Icon path={mdiGithub} size={2.6} color="#FFF" />
         </a>
       </span>
+      <p className="quote">
+        <q>
+          No role is so well suited to philosophy as the one you happen to be in
+          right now.
+        </q>{" "}
+        ~ Marcus Aurelius <cite>Meditations</cite>
+      </p>
+
+      <small className="copyright">
+        &copy; Copyright 2022, James Barrett. All Rights Reserved
+      </small>
     </footer>
   );
 };
