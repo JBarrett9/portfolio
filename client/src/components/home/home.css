@@ -1,0 +1,199 @@
+.about-me {
+  color: white;
+  margin: auto;
+  margin-top: 24rem;
+  width: 80%;
+  font-size: 2.2rem;
+  letter-spacing: 0.1rem;
+  font-family: "Quicksand", sans-serif;
+  border-bottom: 0.1rem solid var(--c5);
+  padding: 0 4rem 2rem 4rem;
+}
+
+.featured-projects {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.home {
+  margin-left: 4rem;
+  width: 26rem;
+  text-align: center;
+  color: #fff;
+  font-family: "Handlee", cursive;
+}
+
+.icon-anim {
+  animation-name: icon;
+  animation-fill-mode: forwards;
+  animation-duration: 1.5s;
+  opacity: 0;
+}
+
+.sq-1 {
+  width: 35.7rem;
+  height: 19.9rem;
+  border-top: 0.2rem solid var(--c5);
+  position: absolute;
+  top: 1.8rem;
+  left: 1.8rem;
+  opacity: 0;
+  animation-name: sq1;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+
+.sq-2 {
+  width: 26.9rem;
+  height: 21.1rem;
+  border-left: 0.2rem solid var(--c1);
+  position: absolute;
+  left: 2.6rem;
+  top: 1.1rem;
+  opacity: 0;
+  animation-name: sq2;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.sq-3 {
+  width: 35rem;
+  height: 15rem;
+  border-right: 0.2rem solid var(--c4);
+  position: absolute;
+  left: 1.8rem;
+  top: 3.2rem;
+  opacity: 0;
+  animation-name: sq3;
+  animation-duration: 9s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.sq-4 {
+  width: 37.9rem;
+  height: 15rem;
+  border-bottom: 0.2rem solid var(--c2);
+  position: absolute;
+  left: 2.4rem;
+  opacity: 0;
+  animation-name: sq4;
+  animation-duration: 8s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sq1 {
+  from {
+    border-radius: 0;
+  }
+  to {
+    border-radius: 2.5rem 12rem 0 9rem;
+    opacity: 1;
+  }
+}
+
+@keyframes sq2 {
+  from {
+    border-radius: 0;
+  }
+  to {
+    border-radius: 2.5rem 0 5rem 9rem;
+    opacity: 1;
+  }
+}
+
+@keyframes sq3 {
+  from {
+    border-radius: 0;
+  }
+  to {
+    border-radius: 5rem 0 24rem 1.2rem;
+    opacity: 1;
+  }
+}
+
+@keyframes sq4 {
+  from {
+    border-radius: 0;
+  }
+  to {
+    border-radius: 5rem 2.5rem 20rem;
+    opacity: 1;
+  }
+}
+
+@keyframes icon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tech-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: -1.2rem;
+}
+
+.tech-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background-color: white;
+}
+
+@media (min-width: 600px) {
+  .about-me {
+    margin-top: 9rem;
+    width: 40%;
+    margin-left: calc(50% - 380px);
+  }
+
+  .home {
+    margin: auto;
+  }
+
+  .featured-projects {
+    width: 80%;
+  }
+
+  .sq-1 {
+    width: 35.7rem;
+    height: 19.9rem;
+    border-top: 0.2rem solid var(--c5);
+    top: 1.8rem;
+    left: calc(50% - 144px);
+  }
+
+  .sq-2 {
+    width: 26.9rem;
+    height: 21.1rem;
+    border-left: 0.2rem solid var(--c1);
+    left: calc(50% - 136px);
+    top: 1.1rem;
+  }
+
+  .sq-3 {
+    width: 35rem;
+    height: 15rem;
+    border-right: 0.2rem solid var(--c4);
+    left: calc(50% - 144px);
+    top: 3.2rem;
+  }
+
+  .sq-4 {
+    width: 37.9rem;
+    height: 15rem;
+    border-bottom: 0.2rem solid var(--c2);
+    left: calc(50% - 150px);
+  }
+}

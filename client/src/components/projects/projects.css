@@ -1,0 +1,50 @@
+.page-btn {
+  background-color: var(--bg);
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.projects {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.projects-heading {
+  color: white;
+  padding-left: 0.8rem;
+  padding-bottom: 0.4rem;
+  width: 88%;
+  margin-left: 1rem;
+  font-weight: 400;
+  font-size: 2.8rem;
+}
+
+.ph1 {
+  border-bottom: 0.1rem solid var(--c5);
+  border-left: 0.1rem solid var(--c6);
+}
+
+.ph2 {
+  border-bottom: 0.1rem solid var(--c2);
+  border-left: 0.1rem solid var(--c1);
+}
+
+@media (min-width: 600px) {
+  .page-btn {
+    align-self: center;
+  }
+
+  .projects {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .projects-heading {
+    margin-left: 4rem;
+    width: 40rem;
+  }
+}

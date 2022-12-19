@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+.romance {
+  font-family: "Merriweather", serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.romance button {
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0.5rem;
+}
+
+.romance button:hover {
+  background-color: #888;
+  color: #fff;
+}
+
+#control {
+  background-color: #444;
+  border-bottom: 0.3rem outset #555;
+  color: #fff;
+  align-items: center;
+  display: flex;
+  padding: 1em;
+}
+
+#control label {
+  font-size: 18px;
+  margin-right: 1rem;
+}
+
+#control input,
+select {
+  font-size: 18px;
+  margin-right: 4rem;
+}
+
+.frame {
+  background-color: antiquewhite;
+  border: 1rem outset goldenrod;
+  box-shadow: 0.25rem 0.5rem 0.5rem #777;
+  margin: auto;
+  margin-top: 10rem;
+  width: 60rem;
+  height: auto;
+  padding-top: 0;
+  text-align: center;
+}
+
+.num-input {
+  width: 5rem;
+}
+
+#poem {
+  margin-bottom: 4rem;
+  margin-top: -3rem;
+  white-space: pre;
+}
+
+#title {
+  letter-spacing: 0.15em;
+  text-transform: capitalize;
+}

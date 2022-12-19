@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+:root {
+  --bg: #444;
+  --c1: #ffc1cf;
+  --c2: #e8ffb7;
+  --c3: #e2a0ff;
+  --c4: #e2a0ff;
+  --c5: #c4f5fc;
+  --c6: #b7ffd8;
+
+  --font-family: "Quicksand", sans-serif;
+}
+
+a {
+  cursor: pointer;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+
+.spinner {
+  border-top: 0.2rem solid var(--c5);
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

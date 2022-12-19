@@ -1,0 +1,46 @@
+footer {
+  background-color: #202020;
+  height: 13rem;
+  line-height: 5.2rem;
+  width: 100%;
+  position: static;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.footer-icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.copyright {
+  color: white;
+  float: left;
+}
+
+#mail-icon {
+  font-size: 3.2rem;
+  color: white;
+}
+
+@media (min-width: 600px) {
+  .copyright {
+    margin-left: 1rem;
+  }
+
+  footer {
+    height: 7rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-icons {
+    flex-basis: 10%;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+}

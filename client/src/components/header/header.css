@@ -1,0 +1,64 @@
+.logo {
+  width: 24rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  border: 0.1rem solid var(--c2);
+  padding: 1.2rem 0;
+  width: 16rem;
+  text-align: center;
+}
+
+.nav-link:first-child {
+  margin-bottom: 2rem;
+}
+
+.nav-link:last-child {
+  border-color: var(--c6);
+}
+
+.nav-link:hover {
+  border-width: 0.2rem;
+}
+
+@media (max-width: 961px) {
+  .logo {
+    order: 1;
+  }
+
+  .nav-link:first-child {
+    order: 2;
+  }
+
+  .nav-link:last-child {
+    order: 3;
+  }
+}
+
+@media (min-width: 961px) {
+  .navbar {
+    flex-direction: row;
+  }
+
+  .nav-link:first-child {
+    margin-right: 4rem;
+    margin-bottom: 0;
+  }
+
+  .nav-link:last-child {
+    margin-left: 4rem;
+  }
+}
