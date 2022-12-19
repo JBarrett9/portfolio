@@ -12,7 +12,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [miniProjects, setMiniProjects] = useState([]);
   const [search, setSearch] = useState("");
-  const [technology, setTechnology] = useState("");
+  const [technology, setTechnology] = useState("any");
   const [start, setStart] = useState(0);
   const [miniStart, setMiniStart] = useState(0);
   const [resultsPerPage, setResultsPerPage] = useState(4);
