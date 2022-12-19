@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Contact, Footer, Projects } from "./components";
+import { Contact, Footer, Projects, Success } from "./components";
 import Home from "./components/home/home";
 import { Romance } from "./components/mini-projects";
 
@@ -12,6 +12,7 @@ function App() {
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/projects" element={<Projects />}></Route>
         <Route path="/mini_projects/romance" element={<Romance />}></Route>
+        <Route path="/success" element={<Success />}></Route>
       </Routes>
       <Footer />
     </>
