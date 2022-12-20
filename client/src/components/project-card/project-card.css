@@ -6,6 +6,10 @@
   margin-bottom: 1rem;
 }
 
+.featured-projects .project-card {
+  margin-bottom: 2rem;
+}
+
 .full-img {
   max-width: 100%;
   position: fixed;
@@ -37,10 +41,11 @@
   border: 0.2rem solid var(--c3);
   border-radius: 1.5rem;
   color: white;
-  width: 34rem;
+  width: 28rem;
   height: auto;
   margin-top: 2rem;
   padding: 0 2rem;
+  margin: auto;
 }
 
 .project-card a {
@@ -60,7 +65,7 @@
 }
 
 .project-card-img {
-  width: 34rem;
+  width: 28rem;
   cursor: pointer;
 }
 
@@ -96,4 +101,14 @@
 .technologies p,
 svg {
   margin-right: 1rem;
+}
+
+@media (min-width: 600px) {
+  .project-card {
+    width: 34rem;
+  }
+
+  .project-card-img {
+    width: 34rem;
+  }
 }

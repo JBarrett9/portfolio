@@ -1,6 +1,6 @@
 footer {
   background-color: #202020;
-  height: 26rem;
+  min-height: 26rem;
   line-height: 5.2rem;
   width: 100%;
   position: static;
@@ -34,7 +34,7 @@ footer {
   text-align: center;
   font-size: 2rem;
   line-height: 2.4rem;
-  width: 36rem;
+  width: 26rem;
 }
 
 @media (min-width: 1500px) {
@@ -44,7 +44,7 @@ footer {
   }
 
   footer {
-    height: 8rem;
+    min-height: 8rem;
     flex-direction: row;
     justify-content: space-between;
   }

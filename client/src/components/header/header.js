@@ -13,7 +13,9 @@ const Header = () => {
           src="https://storage.googleapis.com/portfolio-web-static-files-9867/logo.JPG"
         />
       </Link>
-      <Link className="nav-link">Contact Me</Link>
+      <Link className="nav-link" to="/contact">
+        Contact Me
+      </Link>
     </nav>
   );
 };

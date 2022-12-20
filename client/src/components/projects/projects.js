@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Icon from "@mdi/react";
 import { mdiArrowRightBoldOutline, mdiArrowLeftBoldOutline } from "@mdi/js";
 import { fetchProjects, fetchProjectsByCategory } from "../../api";
@@ -6,6 +6,7 @@ import Header from "../header/header";
 import useMediaQuery from "../hooks/mediaquery";
 import ProjectCard from "../project-card/project-card";
 import ProjectsNav from "./projects-nav/projects-nav";
+import { useSwipeable } from "react-swipeable";
 import "./projects.css";
 
 const Projects = () => {
@@ -20,6 +21,36 @@ const Projects = () => {
   const one = useMediaQuery("(max-width: 1023px");
   const two = useMediaQuery("(max-width: 1300px");
   const three = useMediaQuery("(max-width: 1640px");
+
+  const left = () => {
+    if (start + resultsPerPage < projects.length) {
+      setStart(start + resultsPerPage);
+    }
+  };
+
+  const right = () => {
+    if (start >= resultsPerPage) {
+      setStart(start - resultsPerPage);
+    }
+  };
+
+  const miniLeft = () => {
+    if (miniStart + resultsPerPage < miniProjects.length) {
+      setMiniStart(miniStart + resultsPerPage);
+    }
+  };
+
+  const miniRight = () => {
+    if (miniStart >= resultsPerPage) {
+      setMiniStart(miniStart - resultsPerPage);
+    }
+  };
+
+  const handlers = useSwipeable({ onSwipedLeft: left, onSwipedRight: right });
+  const miniHandlers = useSwipeable({
+    onSwipedLeft: miniLeft,
+    onSwipedRight: miniRight,
+  });
 
   useEffect(() => {
     async function getProjects() {
@@ -46,16 +77,6 @@ const Projects = () => {
       setResultsPerPage(4);
     }
   }, [one, two, three]);
-
-  const prev = () => {
-    if (start >= resultsPerPage) {
-      setStart(start - resultsPerPage);
-    }
-  };
-
-  const next = () => {
-    setStart(start + resultsPerPage);
-  };
 
   const includesSearch = (project) => {
     return (
@@ -89,7 +110,7 @@ const Projects = () => {
       <h2 className="projects-heading ph1">Projects</h2>
       {projects.length > 0 ? (
         <>
-          <div className="projects">
+          <div className="projects" {...handlers}>
             {projects
               .filter((project) => includesSearch(project))
               .slice(start, start + resultsPerPage)
@@ -127,7 +148,7 @@ const Projects = () => {
       <h2 className="projects-heading ph2">Smaller Projects</h2>
       {miniProjects.length > 0 ? (
         <>
-          <div className="projects mini">
+          <div className="projects mini" {...miniHandlers}>
             {miniProjects
               .filter((project) => includesSearch(project))
               .slice(miniStart, miniStart + resultsPerPage)

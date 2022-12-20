@@ -11,7 +11,7 @@
 }
 
 .contact-form {
-  width: 100%;
+  width: 96%;
   border: 0.1rem solid var(--c6);
   padding: 1rem;
 }
@@ -23,7 +23,7 @@
 }
 
 .contact-links {
-  width: 100%;
+  width: 96%;
   display: flex;
   justify-content: space-around;
   align-items: center;
