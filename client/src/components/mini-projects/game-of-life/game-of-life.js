@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "./game-of-life.css";
 
 const Life = () => {
-  const [rows, setRows] = useState(Math.floor(window.innerHeight / 40) - 7);
-  const [cols, setCols] = useState(Math.floor(window.innerWidth / 40) - 10);
+  const [rows, setRows] = useState(Math.floor(window.innerHeight / 50));
+  const [cols, setCols] = useState(Math.floor(window.innerWidth / 50));
   const [board, setBoard] = useState([]);
   const [activeCells, setActiveCells] = useState([]);
   const [refresh, setRefresh] = useState(true);

@@ -19,10 +19,10 @@
 .game-of-life .buttons {
   position: absolute;
   display: flex;
-  left: 4rem;
-  top: 3rem;
+  flex-direction: column;
+  left: 2rem;
+  top: 2rem;
   background-color: #bbb;
-  height: 6rem;
   align-items: center;
   box-shadow: 0.6rem 0.6rem 0.8rem #000;
   padding-left: 2rem;
@@ -32,7 +32,7 @@
   width: 12rem;
   height: 4rem;
   border-radius: 1.5rem;
-  margin-right: 2rem;
+  margin: 1rem 2rem 1rem 0;
   font-size: 2rem;
   background-color: var(--c6);
   border: none;
