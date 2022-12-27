@@ -1,0 +1,50 @@
+.active {
+  background-color: var(--c1);
+}
+
+.board {
+  border-spacing: 0.4rem;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.cell {
+  border: 0.1rem solid var(--c5);
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  border-radius: 25%;
+}
+
+.game-of-life .buttons {
+  position: absolute;
+  display: flex;
+  left: 4rem;
+  top: 3rem;
+  background-color: #bbb;
+  height: 6rem;
+  align-items: center;
+  box-shadow: 0.6rem 0.6rem 0.8rem #000;
+  padding-left: 2rem;
+}
+
+.game-of-life button {
+  width: 12rem;
+  height: 4rem;
+  border-radius: 1.5rem;
+  margin-right: 2rem;
+  font-size: 2rem;
+  background-color: var(--c6);
+  border: none;
+  box-shadow: 0.2rem 0.2rem 0.6rem #444;
+  cursor: pointer;
+}
+
+.game-of-life button:hover {
+  filter: contrast(85%);
+  box-shadow: none;
+}
+
+.inactive {
+  background-color: var(--bg);
+}
