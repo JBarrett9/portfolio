@@ -9,7 +9,9 @@ const useOutsideClick = (ref, setDisplay, setEnabled) => {
     function handleClickOut(e) {
       if (ref.current && !ref.current.contains(e.target)) {
         setDisplay(false);
-        setEnabled(true);
+        if (setEnabled) {
+          setEnabled(true);
+        }
       }
     }
     document.addEventListener("mousedown", handleClickOut);

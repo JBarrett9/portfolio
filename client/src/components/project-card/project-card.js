@@ -43,7 +43,9 @@ const ProjectCard = (props) => {
       original: image.url,
       thumbnail: image.url,
     }));
-    setEnabled(false);
+    if (props.setEnabled) {
+      setEnabled(false);
+    }
     setDisplay(true);
     setImgSet(set);
   };
