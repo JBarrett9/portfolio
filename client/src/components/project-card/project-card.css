@@ -43,9 +43,8 @@
   color: white;
   width: 28rem;
   height: auto;
-  margin-top: 2rem;
   padding: 0 2rem;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .project-card a {
@@ -83,6 +82,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.technology {
+  cursor: default;
 }
 
 .technology-icon {

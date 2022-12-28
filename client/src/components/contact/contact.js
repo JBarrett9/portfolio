@@ -7,18 +7,9 @@ import Home from "../home/home";
 import Success from "../success/success";
 
 const Contact = () => {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = () => {
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 100);
+  const handleSubmit = (e) => {
+    window.close();
   };
-
-  if (submitted) {
-    setSubmitted(false);
-    return <Success />;
-  }
 
   return (
     <>
@@ -54,9 +45,9 @@ const Contact = () => {
         </span>
         <form
           action="https://public.herotofu.com/v1/b8d66da0-7f5d-11ed-b38f-a1ed22f366b1"
-          onSubmit={handleSubmit}
+          onSubmit={(e) => handleSubmit(e)}
           method="POST"
-          target="_blank"
+          target="_self"
           className="contact-form"
         >
           <div className="contact-input">

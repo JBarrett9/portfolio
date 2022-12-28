@@ -17,31 +17,32 @@ const Projects = () => {
   const [start, setStart] = useState(0);
   const [miniStart, setMiniStart] = useState(0);
   const [resultsPerPage, setResultsPerPage] = useState(4);
+  const [enabled, setEnabled] = useState(true);
 
   const one = useMediaQuery("(max-width: 1023px");
   const two = useMediaQuery("(max-width: 1300px");
   const three = useMediaQuery("(max-width: 1640px");
 
   const left = () => {
-    if (start + resultsPerPage < projects.length) {
+    if (enabled && start + resultsPerPage < projects.length) {
       setStart(start + resultsPerPage);
     }
   };
 
   const right = () => {
-    if (start >= resultsPerPage) {
+    if (enabled && start >= resultsPerPage) {
       setStart(start - resultsPerPage);
     }
   };
 
   const miniLeft = () => {
-    if (miniStart + resultsPerPage < miniProjects.length) {
+    if (enabled && miniStart + resultsPerPage < miniProjects.length) {
       setMiniStart(miniStart + resultsPerPage);
     }
   };
 
   const miniRight = () => {
-    if (miniStart >= resultsPerPage) {
+    if (enabled && miniStart >= resultsPerPage) {
       setMiniStart(miniStart - resultsPerPage);
     }
   };
@@ -109,15 +110,7 @@ const Projects = () => {
       />
       <h2 className="projects-heading ph1">Projects</h2>
       {projects.length > 0 ? (
-        <>
-          <div className="projects" {...handlers}>
-            {projects
-              .filter((project) => includesSearch(project))
-              .slice(start, start + resultsPerPage)
-              .map((project) => (
-                <ProjectCard project={project} />
-              ))}
-          </div>
+        <div className="projects-section">
           <span className="nav-btns">
             {start >= resultsPerPage && (
               <button
@@ -141,7 +134,15 @@ const Projects = () => {
               </button>
             )}
           </span>
-        </>
+          <div className="projects" {...handlers}>
+            {projects
+              .filter((project) => includesSearch(project))
+              .slice(start, start + resultsPerPage)
+              .map((project) => (
+                <ProjectCard setEnabled={setEnabled} project={project} />
+              ))}
+          </div>
+        </div>
       ) : (
         <div className="spinner" />
       )}
@@ -153,7 +154,7 @@ const Projects = () => {
               .filter((project) => includesSearch(project))
               .slice(miniStart, miniStart + resultsPerPage)
               .map((project) => (
-                <ProjectCard project={project} />
+                <ProjectCard setEnabled={setEnabled} project={project} />
               ))}
           </div>
           <span className="nav-btns">

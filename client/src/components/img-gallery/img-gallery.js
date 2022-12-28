@@ -4,11 +4,12 @@ import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
 import "./img-gallery.css";
 
-const useOutsideClick = (ref, setDisplay) => {
+const useOutsideClick = (ref, setDisplay, setEnabled) => {
   useEffect(() => {
     function handleClickOut(e) {
       if (ref.current && !ref.current.contains(e.target)) {
         setDisplay(false);
+        setEnabled(true);
       }
     }
     document.addEventListener("mousedown", handleClickOut);
@@ -20,7 +21,7 @@ const useOutsideClick = (ref, setDisplay) => {
 
 const Gallery = (props) => {
   const wrapperRef = useRef(null);
-  useOutsideClick(wrapperRef, props.setDisplay);
+  useOutsideClick(wrapperRef, props.setDisplay, props.setEnabled);
 
   return (
     <div ref={wrapperRef} className="gallery">

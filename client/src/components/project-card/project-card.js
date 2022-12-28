@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import Gallery from "../img-gallery/img-gallery";
 
 const ProjectCard = (props) => {
-  const { project } = props;
+  const { project, setEnabled } = props;
   const { images, technologies } = project;
   const [display, setDisplay] = useState(false);
   const [imgSet, setImgSet] = useState([]);
@@ -43,6 +43,7 @@ const ProjectCard = (props) => {
       original: image.url,
       thumbnail: image.url,
     }));
+    setEnabled(false);
     setDisplay(true);
     setImgSet(set);
   };
@@ -56,6 +57,7 @@ const ProjectCard = (props) => {
             className="gallery"
             images={imgSet}
             setDisplay={setDisplay}
+            setEnabled={setEnabled}
           />
         </>
       )}
@@ -65,20 +67,32 @@ const ProjectCard = (props) => {
           {technologies &&
             technologies.map((technology) =>
               technology.icon ? (
-                <svg
-                  viewBox="0 0 24 24"
-                  role="presentation"
-                  key={technology.id}
+                <span
+                  className="technology"
                   title={technology.name}
-                  className="technology-icon"
+                  alt={technology.name}
                 >
-                  <path
-                    d={technology.icon}
-                    style={{ fill: technology.color }}
-                  ></path>
-                </svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    role="presentation"
+                    key={technology.id}
+                    className="technology-icon"
+                  >
+                    <path
+                      d={technology.icon}
+                      style={{ fill: technology.color }}
+                    ></path>
+                  </svg>
+                </span>
               ) : (
-                <p key={technology.id}>{technology.name}</p>
+                <p
+                  title={technology.name}
+                  alt={technology.name}
+                  key={technology.id}
+                  className={"technology"}
+                >
+                  {technology.name}
+                </p>
               )
             )}
         </span>
