@@ -97,9 +97,9 @@ const Home = () => {
         lives. It is also the case that the things we fail to consider can often
         yield unexpected and unintended results. For those reasons, as well as
         just for the love of it, I am committed to learning. I am a graduate of
-        the Full Stack Academy software engineering immersive program and a
-        current student at Arizona State University studying political science,
-        political statistics and data science.
+        the Virginia Tech / Full Stack Academy software engineering immersive
+        program and a current student at Arizona State University studying
+        political science, political statistics and data science.
       </p>
 
       <div className="featured-projects">
