@@ -37,7 +37,8 @@ const ProjectCard = (props) => {
     setDateStr(
       months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
     );
-  }, []);
+  }, [props]);
+  
   const displayGallery = (images) => {
     const set = images.map((image) => ({
       original: image.url,
