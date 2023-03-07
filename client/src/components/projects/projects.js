@@ -21,7 +21,7 @@ const Projects = () => {
 
   const one = useMediaQuery("(max-width: 1023px");
   const two = useMediaQuery("(max-width: 1300px");
-  const three = useMediaQuery("(max-width: 1640px");
+  const three = useMediaQuery("(max-width: 1680px");
 
   const left = () => {
     if (enabled && start + resultsPerPage < projects.length) {

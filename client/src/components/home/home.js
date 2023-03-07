@@ -19,8 +19,8 @@ const Home = () => {
   useEffect(() => {
     const getProjects = async () => {
       const project1 = await fetchProjectById(1);
-      const project2 = await fetchProjectById(2);
-      const project3 = await fetchProjectById(3);
+      const project2 = await fetchProjectById(9);
+      const project3 = await fetchProjectById(11);
       setProjects([project1, project2, project3]);
     };
 
