@@ -9,7 +9,7 @@ const addTechnologyToProject = async (params) => {
     } = await client.query(
       `INSERT INTO project_technologies("projectId", "technologyId")
       VALUES ($1, $2) 
-      RETURNING *`,
+      RETURNING *;`,
       [projectId, technologyId]
     );
 
