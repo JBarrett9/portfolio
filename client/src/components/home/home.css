@@ -22,6 +22,7 @@
 .home {
   margin-left: 3rem;
   width: 19.5rem;
+  overflow-x: hidden;
   text-align: center;
   color: #fff;
   font-family: "Handlee", cursive;
