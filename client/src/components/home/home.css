@@ -1,7 +1,7 @@
 .about-me {
   color: white;
   margin: auto;
-  margin-top: 24rem;
+  margin-top: 26rem;
   width: 80%;
   font-size: 2.2rem;
   letter-spacing: 0.1rem;
@@ -20,8 +20,8 @@
 }
 
 .home {
-  margin-left: 4rem;
-  width: 26rem;
+  margin-left: 3rem;
+  width: 19.5rem;
   text-align: center;
   color: #fff;
   font-family: "Handlee", cursive;
@@ -35,12 +35,12 @@
 }
 
 .sq-1 {
-  width: 35.7rem;
-  height: 19.9rem;
+  width: 26.8rem;
+  height: 14.9rem;
   border-top: 0.2rem solid var(--c5);
   position: absolute;
-  top: 1.8rem;
-  left: 1.8rem;
+  top: 1.4rem;
+  left: 1.4rem;
   opacity: 0;
   animation-name: sq1;
   animation-duration: 4s;
@@ -48,12 +48,12 @@
 }
 
 .sq-2 {
-  width: 26.9rem;
-  height: 21.1rem;
+  width: 20.2rem;
+  height: 15.825rem;
   border-left: 0.2rem solid var(--c1);
   position: absolute;
-  left: 2.6rem;
-  top: 1.1rem;
+  left: 2rem;
+  top: 0.83rem;
   opacity: 0;
   animation-name: sq2;
   animation-duration: 4s;
@@ -62,12 +62,12 @@
 }
 
 .sq-3 {
-  width: 35rem;
-  height: 15rem;
+  width: 26.25rem;
+  height: 11.25rem;
   border-right: 0.2rem solid var(--c4);
   position: absolute;
-  left: 1.8rem;
-  top: 3.2rem;
+  left: 1.4rem;
+  top: 2.4rem;
   opacity: 0;
   animation-name: sq3;
   animation-duration: 9s;
@@ -76,16 +76,23 @@
 }
 
 .sq-4 {
-  width: 37.9rem;
-  height: 15rem;
+  width: 28.4rem;
+  height: 11.25rem;
   border-bottom: 0.2rem solid var(--c2);
   position: absolute;
-  left: 2.4rem;
+  left: 1.8rem;
+  top: 2.4rem;
   opacity: 0;
   animation-name: sq4;
   animation-duration: 8s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
+}
+
+.title {
+  font-size: 3.3rem;
+  font-weight: 400;
+  margin-top: 3.2rem;
 }
 
 @keyframes sq1 {
@@ -154,6 +161,7 @@
 @media (min-width: 600px) {
   .home {
     margin: auto;
+    width: 26rem;
   }
 
   .featured-projects {
@@ -189,6 +197,10 @@
     height: 15rem;
     border-bottom: 0.2rem solid var(--c2);
     left: calc(50% - 150px);
+  }
+
+  .title {
+    font-size: 4.4rem;
   }
 }
 

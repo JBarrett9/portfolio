@@ -12,9 +12,11 @@ import ProjectCard from "../project-card/project-card";
 import { useEffect, useState } from "react";
 import { fetchProjectById, fetchProjects } from "../../api";
 import Header from "./header/header";
+import useMediaQuery from "../hooks/mediaquery";
 
 const Home = () => {
   const [projects, setProjects] = useState([]);
+  const [fontSize, setFontSize] = useState(1.6);
 
   useEffect(() => {
     const getProjects = async () => {
@@ -27,6 +29,16 @@ const Home = () => {
     getProjects();
   }, []);
 
+  const breakPoint = useMediaQuery("(min-width: 600px");
+
+  useEffect(() => {
+    if (breakPoint) {
+      setFontSize(2.2);
+    } else {
+      setFontSize(1.6);
+    }
+  }, [breakPoint]);
+
   return (
     <>
       <Header />
@@ -35,10 +47,10 @@ const Home = () => {
         <div className="sq-2"></div>
         <div className="sq-3"></div>
         <div className="sq-4"></div>
-        <h1 style={{ fontSize: "4.4rem", fontWeight: "400" }}>James Barrett</h1>
+        <h1 className="title">James Barrett</h1>
         <p
           style={{
-            fontSize: "2.2rem",
+            fontSize: `${fontSize}rem`,
             fontWeight: "400",
             marginTop: "-3.2rem",
           }}
@@ -50,42 +62,42 @@ const Home = () => {
             className="icon-anim"
             style={{ animationDelay: "4s" }}
             path={mdiReact}
-            size={2.2}
+            size={fontSize}
             color="#c4f5fc"
           />
           <Icon
             className="icon-anim"
             style={{ animationDelay: "4.25s" }}
             path={mdiNodejs}
-            size={2.2}
+            size={fontSize}
             color="#b7ffd8"
           />
           <Icon
             className="icon-anim"
             style={{ animationDelay: "4.5s" }}
             path={mdiLanguageHtml5}
-            size={2.2}
+            size={fontSize}
             color="#ffc1cf"
           />
           <Icon
             className="icon-anim"
             style={{ animationDelay: "4.75s" }}
             path={mdiLanguageCss3}
-            size={2.2}
+            size={fontSize}
             color="#c4f5fc"
           />
           <Icon
             className="icon-anim"
             style={{ animationDelay: "5s" }}
             path={mdiLanguageJavascript}
-            size={2.2}
+            size={fontSize}
             color="#ffc1cf"
           />
           <Icon
             className="icon-anim"
             style={{ animationDelay: "5.25s" }}
             path={mdiLanguagePython}
-            size={2.2}
+            size={fontSize}
             color="#b7ffd8"
           />
         </span>
