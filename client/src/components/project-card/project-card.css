@@ -18,9 +18,24 @@
 }
 
 .gallery {
-  position: fixed;
+  position: relative;
   width: 92vw;
   left: 3vw;
+  z-index: 1;
+}
+
+.gallery-preview {
+  position: relative;
+}
+
+.gallery-icon {
+  position: absolute;
+  background-color: #ddd;
+  border-radius: 1.5rem;
+  padding: 0.2rem;
+  color: black;
+  right: -0.4rem;
+  bottom: 0.2rem;
 }
 
 .mini .project-card {
@@ -70,6 +85,7 @@
   height: 14rem;
   width: auto !important;
   cursor: pointer;
+  display: block;
 }
 
 .project-description {

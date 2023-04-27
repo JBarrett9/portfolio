@@ -10,7 +10,7 @@
 
 .gallery {
   position: fixed;
-  top: 1rem;
+  top: 0;
   background-color: black;
   border: 0.2rem solid black;
 }

@@ -1,6 +1,7 @@
 import Icon from "@mdi/react";
 import {
   mdiWeb,
+  mdiImageMultiple,
   mdiGithub,
   mdiMenuDownOutline,
   mdiMenuUpOutline,
@@ -38,7 +39,7 @@ const ProjectCard = (props) => {
       months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
     );
   }, [props]);
-  
+
   const displayGallery = (images) => {
     const set = images.map((image) => ({
       original: image.url,
@@ -100,13 +101,16 @@ const ProjectCard = (props) => {
             )}
         </span>
         {images && (
-          <img
-            className="project-card-img"
-            key={images[0]?.id}
-            src={images[0]?.url}
-            alt={images[0]?.alt}
-            onClick={() => displayGallery(images)}
-          />
+          <div className="gallery-preview">
+            <Icon className="gallery-icon" path={mdiImageMultiple} size={2} />
+            <img
+              className="project-card-img"
+              key={images[0]?.id}
+              src={images[0]?.url}
+              alt={images[0]?.alt}
+              onClick={() => displayGallery(images)}
+            />
+          </div>
         )}
         <span className="project-links">
           {project.url && (
